@@ -30,10 +30,25 @@ namespace Praktikum_Week_5
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            listBoxKoleksi.Items.Add(txtBoxInput.Text);
-            txtBoxInput.Text = "";
-            if (listBoxKoleksi.Items.Contains(txtBoxInput.Text))
+            string text = txtBoxInput.Text;
+            bool isDuplicate = false;
+            foreach (var name in listBoxKoleksi.Items)
+            {
+                if (name.ToString().Equals(text))
+                {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            if (isDuplicate)
+            {
                 MessageBox.Show("Data sudah ada! Input kembali");
+            }
+            else
+            {
+                listBoxKoleksi.Items.Add(text);
+                txtBoxInput.Text = "";
+            }
         }
 
         private void checkBoxAktif_CheckedChanged(object sender, EventArgs e)

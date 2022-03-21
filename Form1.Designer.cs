@@ -177,6 +177,7 @@
             this.Controls.Add(this.txtBoxInput);
             this.Controls.Add(this.lblData);
             this.Name = "FormMateri";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form Materi";
             this.Load += new System.EventHandler(this.FormMateri_Load);
             this.ResumeLayout(false);
